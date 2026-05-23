@@ -7,7 +7,7 @@
 <body>
 <div id="out">Loading…</div>
 <script>
-fetch("events.json")
+fetch("events/events.json")
   .then(r => r.json())
   .then(data => {
     var out = document.getElementById("out");

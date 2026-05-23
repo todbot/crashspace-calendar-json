@@ -1,0 +1,5 @@
+<IfModule mod_headers.c>
+  <Files "events.json">
+      Header always set Access-Control-Allow-Origin "*"
+  </Files>
+</IfModule>

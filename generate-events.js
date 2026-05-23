@@ -26,7 +26,7 @@ const ICS_URL =
 const PAST_DAYS = 1;
 const FUTURE_DAYS = 90;
 
-const OUT_FILE = path.join(__dirname, "events.json");
+const OUT_FILE = path.join(__dirname, "events/events.json");
 
 const DAY = 24 * 60 * 60 * 1000;
 
