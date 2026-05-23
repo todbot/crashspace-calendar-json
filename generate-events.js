@@ -35,6 +35,22 @@ function dateKey(d) {
   return d.toISOString().slice(0, 10);
 }
 
+/**
+ * Flatten a node-ical VEVENT into the plain JSON shape index.html consumes.
+ *
+ * For one-off events, ev.start/ev.end are used directly. For recurring events,
+ * the caller passes the specific occurrence's times via startOverride/endOverride,
+ * since every instance shares one master VEVENT but lands on a different date.
+ *
+ * Times are emitted as ISO strings (the browser formats them); allDay is derived
+ * from iCal's date-vs-datetime distinction; id combines uid + start so repeated
+ * instances of a recurring event stay unique.
+ *
+ * @param {object} ev            Parsed VEVENT from node-ical.
+ * @param {Date}  [startOverride] Occurrence start (recurring events only).
+ * @param {Date}  [endOverride]   Occurrence end (recurring events only).
+ * @returns {object} { id, title, start, end, allDay, location, description, url }
+ */
 function normalize(ev, startOverride, endOverride) {
   const start = startOverride || ev.start;
   const end = endOverride || ev.end;
