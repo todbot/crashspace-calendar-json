@@ -46,9 +46,9 @@ Test out the result with:
   
 ### Solution
 
-* This repo creates an "events.json" static file that acts as a JSON feed for the
-public Google calendar.  The "events.json" file is the parsed output of the iCal ICS feed.
-It is created by `generate_events.js`. script.
+* This repo provides a `generate_events.js` script that creates an "events.json" 
+static file that acts as a JSON feed for the public Google calendar.  
+The "events.json" file is the parsed output of the iCal ICS feed.
 
 * The `generate_events.js` script works by fetching the ICS feed, 
 using `node-ical` to do the actual parsing, and then a little logic to flatten 
@@ -62,9 +62,10 @@ that has an .htaccess file to add the CORS header to the file,
 if served by a compatible Apache-like webserver. 
 
 
-* Alternatively, this repo has a github action
-set up to run this script every 6 hours and generate a github docs site with
-the error.json file.  Github pages also have a permissive CORS header.
+* Alternatively, this repo has a github action set up to run the "generate_events.js"
+script every 6 hours and deploy a github docs site with the "events.json" file.  
+Since Github pages have a permissive CORS header, browsers can use it. 
+
 You can view it here: 
 
   - https://todbot.github.io/crashspace-calendar/events/events.json
