@@ -46,11 +46,11 @@ Test out the result with:
   
 ### Solution
 
-* This repo provides a `generate_events.js` script that creates an "events.json" 
+* This repo provides a `generate-events.js` script that creates an "events.json" 
 static file that acts as a JSON feed for the public Google calendar.  
 The "events.json" file is the parsed output of the iCal ICS feed.
 
-* The `generate_events.js` script works by fetching the ICS feed, 
+* The `generate-events.js` script works by fetching the ICS feed, 
 using `node-ical` to do the actual parsing, and then a little logic to flatten 
 the somewhat strange layout of calendar data.
 
@@ -62,7 +62,7 @@ that has an .htaccess file to add the CORS header to the file,
 if served by a compatible Apache-like webserver. 
 
 
-* Alternatively, this repo has a github action set up to run the "generate_events.js"
+* Alternatively, this repo has a github action set up to run the "generate-events.js"
 script every 6 hours and deploy a github docs site with the "events.json" file.  
 Since Github pages have a permissive CORS header, browsers can use it. 
 
