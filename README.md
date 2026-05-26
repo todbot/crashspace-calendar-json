@@ -1,4 +1,4 @@
-# crashspace-calendar
+# crashspace-calendar-json
 
 
 Genarate a JSON file from a public Google Calendar ical .ics feed
